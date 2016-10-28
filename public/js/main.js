@@ -53,7 +53,6 @@ $(document).ready(function(){
 
     var controller = new ScrollMagic.Controller({loglevel: 3});
 
-
     var scene1 = new ScrollMagic.Scene({triggerElement: "#section2", duration: "50%"})
         scene1.setTween(enterAnim1);
         scene1.addTo(controller);
@@ -81,58 +80,74 @@ $(document).ready(function(){
     // var scene18 = new ScrollMagic.Scene({triggerElement:"#controw5", triggerHook:"onLeave", offset:"50vh", duration:"95%"}).removePin("#controw5").addTo(controller);
     var scene19 = new ScrollMagic.Scene({triggerElement:"#controw5", triggerHook:"0"}).setTween(hidepinned).addTo(controller)
     // var scene19 = new ScrollMagic.Scene({triggerElement:"#controw6", triggerHook:"onLeave", offset:14}).setPin("#controw6").addTo(controller);
-    
-        
-    // var wipeAnimation = new TimelineMax().add(TweenMax.to($("#controw8"),3, {right:"0%", ease: "Power2.easeInOut"}))
+    var scene20 = new ScrollMagic.Scene({triggerElement:"#controw7", triggerHook:"onLeave", offset:14, duration:"195%"}).setPin("#controw7a", {pushFollowers:true}).addTo(controller);
 
-        
-// function replacePolylinesWithPaths(parentElement) {
-//     var polylines = $(parentElement).find('polyline');
-    
-//     $.each(polylines, function() {
-//     var points = $(this).attr('points');
-//     $('path')
-//     .attr('d', 'M' + points)
-//     .attr('fill', $(this).attr('fill'))
-//     .attr('stroke', $(this).attr('stroke'))
-//     .attr('stroke-width', $(this).attr('stroke-width'))
-//     .insertAfter(this);
-//     });
+    // init ScrollMagic
+    var controller = new ScrollMagic.Controller();
 
-//     $(polylines).remove();
-// }
+    var pinIntroScene = new ScrollMagic.Scene({
+        triggerElement: '#crtxt1',
+        triggerHook: 0,
+        duration:'150%'
+    }).setPin("#crtxt1", {pushFollowers:false}).addTo(controller)
 
-// replacePolylinesWithPaths($(".barsvg"))
+    //pin again
+    // var pinIntroScene2 = new ScrollMagic.Scene({
+    //     triggerElement: '#crtxt1',
+    //     triggerHook: 0,
+    //     duration:"90%"
+    // })
+    // .setPin('#crtxt2', {pushFollowers: false})
+    // .addTo(controller);
 
+    //build a scene
+    var ourScene = new ScrollMagic.Scene({
+        triggerElement: '#secondpgcontent3a img',
+        duration: '50%',
+        triggerHook: 0.9
+    })
+    .setClassToggle('#secondpgcontent3a', 'fade-in') //add class to project01
+    .addIndicators({
+        name: 'fade scene',
+        colorTrigger:'white',
+        colorStart:'#75C695',
+        colorEnd: 'pink'
+    }) //this requires a plugin
 
+    .addTo(controller);
 
-    var drawGraphs = new TimelineMax()
-        .add(TweenMax.to($("#barsvgy1"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
-        .add(TweenMax.to($("#barsvgp1"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
-        .add(TweenMax.to($("#barsvgy2"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
-        .add(TweenMax.to($("#barsvgp2"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
-        .add(TweenMax.to($("#barsvgy3"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
-        .add(TweenMax.to($("#barsvgp3"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
-        .add(TweenMax.staggerTo($(".linepdots"),.5,{opacity: 1, ease:Linear.easeNone}, 0.2))
-        .add(TweenMax.to($(".pline"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
-        .add(TweenMax.staggerTo($(".lineydots"),.5,{opacity: 1, ease:Linear.easeNone}, 0.2))
-        .add(TweenMax.to($(".yline"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
+ //build a scene
+    var ourScene = new ScrollMagic.Scene({
+        triggerElement: '#secondpgcontent3b img',
+        duration: '50%',
+        triggerHook: 0.9
+    })
+    .setClassToggle('#secondpgcontent3b', 'fade-in') //add class to project01
+    .addIndicators({
+        name: 'fade scene',
+        colorTrigger:'white',
+        colorStart:'#75C695',
+        colorEnd: 'pink'
+    }) //this requires a plugin
 
+    .addTo(controller);
 
+     //build a scene
+    var ourScene = new ScrollMagic.Scene({
+        triggerElement: '#secondpgcontent3c img',
+        duration: '50%',
+        triggerHook: 0.9
+    })
+    .setClassToggle('#secondpgcontent3c', 'fade-in') //add class to project01
+    .addIndicators({
+        name: 'fade scene',
+        colorTrigger:'white',
+        colorStart:'#75C695',
+        colorEnd: 'pink'
+    }) //this requires a plugin
 
-        // TweenMax.to($("#controw8"),1,{x:"-100%"})
-    var scene20 = new ScrollMagic.Scene({triggerElement:"#pinContainer", triggerHook:"onLeave", offset:14, duration:"500%"}).setPin("#pinContainer").addTo(controller);
-    var scene21 = new ScrollMagic.Scene({triggerElement:"#pinContainer", triggerHook:0, offset:30, duration:"90%"}).setTween(drawGraphs).addTo(controller);
-
-    // var scene21 = new ScrollMagic.Scene({triggerElement:"#pinContainer", triggerHook:"onLeave", offset:400, duration:"200%"}).setTween(wipeAnimation).addTo(controller);
-
-     
-
-
-
-
-
-// var len = $(".yline").get(0).getTotalLength();
+    .addTo(controller);
+// var len = $("#svgscrib2").get(0).getTotalLength();
 // console.log(len);;
 
 // 191.69161987304688
