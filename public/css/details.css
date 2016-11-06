@@ -10,13 +10,19 @@
 
 
 html{
-    width:100%;
+
+    width:100vw;
+    overflow-x: hidden;
     /*font-size: 62.5%;*/
  }
 body{
     height: 100%;
-    width:100%;
+    width:100vw;
     /*font-size: 100%;*/
+}
+
+#genanimcont{
+    width:100vw;
 }
 
 
@@ -171,15 +177,15 @@ label{
 }
 .sectionMain{
   
-    width: 100%;
-    height: 3000px; 
+    width: 100vw;
+    /*height: 3000px; */
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center
 }
 #section2{
-    width:100%;
+    width:100vw;
       background: #44a2d9;
       padding-right: 0;
       padding-left: 0;
@@ -275,6 +281,7 @@ label{
     padding-bottom: 3vh;
     padding-left: 10vh;
     padding-right: 10vh;
+    padding-top: 5vh;
 
 
 
@@ -605,7 +612,7 @@ label{
 }
 
 #controw6b{
-    height: 200vh;
+    height: 100vh;
 }
 
 #svg6wrap{
@@ -689,7 +696,6 @@ font-family: 'Amatic SC';
     background-color: #44a2d9;
     width:100vw;
     height:100%;
-    position: absolute;
     /*max-height:100vh;*/
     /*position: absolute;*/
     text-align: center;
@@ -869,7 +875,7 @@ font-family: 'Amatic SC';
 
 #connectContainer{
     background-color: #44a2d9;
-    height: 105vh;
+    /*height: 105vh;*/
     width: 100vw;
     display: flex;
     padding-top: 5vh;
@@ -917,16 +923,17 @@ font-family: 'Amatic SC';
 
 #secondpgcontent7{
     display: inline-block;
+    right:200%;
     flex: 1;
-    font-size: 6vmin;
-    line-height: 100%;
+    font-size: 5vmin;
+    /*line-height: 100%;*/
     position: relative;
     white-space: normal;
 }
 
 #secondpgcontent7a{
     display: inline-block;
-    font-size: 6vmin;
+    font-size: 5vmin;
       line-height: 100%;
     position: relative;
     left: 300%;
@@ -1087,20 +1094,17 @@ font-family: 'Amatic SC';
 
     #introhead{
     text-align: center !important;
-     /*font-size: 24px*/
-
     }   
 
     #introsub{
     text-align: center !important;
-
     }
     #aboutUsText{
         margin-top: 20px;
     }
 
     #secondpgcontent1{
-        /*width:80%;*/
+
     }
 
 
@@ -1110,34 +1114,395 @@ font-family: 'Amatic SC';
     justify-content: center;
     align-items: center;
     }
+
+
+
     
-    #row7svgdiv{
-    /*flex-grow: 1;*/
-    /*width:90vw;*/
-   /*
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;*/
+
+
+}
+
+/* ----------- iPhone 4 and 4S ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    
+    #secondpgcontent1{
+        left: 0%;
+        font-size: 15vmin;
+    }
+
+
+
+    #qlcirc{
+        width: auto;
+    }
+
+    #secondpgcontent1a{
+        right:0%;
+        font-size: 13vmin;
+        line-height: 100%;
+    }
+    #secondpgcontent1b{
+        left:0%;
+        font-size: 13vmin;
+    }
+
+    #missioncont{
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+        margin-bottom: 5vh;
+        height: 100%;
 
     }
 
-    .barsvg{
-        /*flex:1;*/
-        max-width: 30%;
-        max-height: 20vh;
+    #svgrow{
+        transform: scale(1);
+        height:20vh;
     }
 
+    #tododiv{
+        height: 40vh;
+    }
 
+    .toolsvgs{
+        width: 25vmin;
+        height: auto;
+        max-height: 25vmin;
+    }
+    #controw5{
+        margin-bottom: 0;
+        padding-bottom: 5vh;
+        padding-top: 5vh;
+        height:100%;
+        border-top: 1vh dashed white;
+    }
 
+    #controw5text{
+        font-size: 10vmin;
+    }
 
+    #controw6o{
+        border-top: 1vh dashed white;
+        margin-top: 0;
+        padding-top: 5vh;
+        height:100%;
+
+    }
+
+    #crtxt1{
+        font-size: 10vmin;
+
+    }
+
+    #svg6wrap{
+        height: 100%;
+    }
+
+    #controw6a{
+        padding-left:5vw;
+        padding-right: 5vw;
+    }
+
+    .rows6txt{
+        font-size: 10vmin;
+    }
+    #controw6b{
+        padding-bottom: 5vh;
+        margin-bottom: 5vh;
+        height:100%;
+    }
+    #controw7{
+         border-top: 1vh dashed white;
+         padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
     #secondpgcontent4{
 
-    font-size: 7vmin;
+    font-size: 10vmin;
     
+    }
+    
+    #row7svgdiv{
+        padding-right: 2vw;
+        padding-left: 2vw;
+    }
+    .barsvg{
+    /*flex:1;*/
+    max-width: 30%;
+    max-height: 20vh;
     }
 
 
-   
+    #barsvgy1{
+         stroke-dasharray:0;
+        stroke-dashoffset:0;
+    }
+    #barsvgy2{
+         stroke-dasharray:0;
+        stroke-dashoffset:0;
+    }
+    #barsvgy3{
+         stroke-dasharray:0;
+        stroke-dashoffset:0;
+    }
+
+
+    #barsvgp1{
+         stroke-dasharray:0;
+        stroke-dashoffset:00;
+    }
+    #barsvgp2{
+         stroke-dasharray:0;
+        stroke-dashoffset:0;
+    }
+    #barsvgp3{
+         stroke-dasharray:0;
+        stroke-dashoffset:0;
+    }
+    .barsvgpurple{
+
+    }
+
+    .linepdots{
+        opacity: 1;
+    }
+
+    .lineydots{
+        opacity: 1;
+    }
+
+    .pline{
+        
+        stroke-dasharray:0;
+        stroke-dashoffset:0;
+    }
+
+    .yline{
+        
+        stroke-dasharray:0;
+        stroke-dashoffset:0;
+    } 
+
+    #secondpgcontent5{
+        font-size: 10vmin;
+    }
+
+    #pinContainer{
+        height: 100%;
+    }
+    #connectContainer{
+        border-top: 1vh dashed white;
+        height: 100%
+    }
+
+    #contextcon{
+        height:auto;
+        margin-top: 5vh;
+    }
+
+    #secondpgcontent7{
+        font-size: 10vmin;
+        right: 0;
+
+    }
+
+    #consvg{
+        width: 100%;
+    }
+
+    #consvgconcon{
+        margin-top: 5vh;
+        height: 100%;
+        max-height: 100%;
+
+
+    }
+
+/*
+
+    #conright{
+         stroke-dasharray:0;
+        stroke-dashoffset:0;
+    }
+
+    #conbottom{
+         stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+    }
+
+    #contop{
+         stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+    }
+    #conleft{
+         stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+    }
+    #conleft2{
+         stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+    }
+
+    .littleconcircles{
+        opacity: 1;
+
+    }
+
+    .lilconwhite{
+        fill:white;
+    }
+
+    .bigconcircles{
+        opacity: 1;
+    }
+
+    .yellowconcircles{
+        opacity: 1;
+    }
+
+    .iconcongrp{
+        opacity: 1;
+    }*/
+
+    #connectsvgcontainer{
+        height: 100%
+    }
+
+    #secondpgcontent7a{
+        left:0;
+        font-size: 10vmin;
+        margin-top: 5vh;
+
+    }
+
+
+
+/*
+    #svgscrib2{
+    stroke-dasharray:0;
+    stroke-dashoffset:0;
+
+    }
+
+    #svgscrib1{
+          stroke-dasharray:0;
+        stroke-dashoffset:0;
+
+    }
+
+    #svgscrib3{
+         stroke-dasharray:0;
+        stroke-dashoffset:0;
+    }
+*/
+    .testsvgblue{
+        fill:white;
+    }
+
+
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+}
+
+/* ----------- iPhone 6 ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+}
+
+/* ----------- iPhone 6+ ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) { 
+
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+}
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
 
 }

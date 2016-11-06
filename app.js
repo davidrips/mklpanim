@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var hbs = require('express-handlebars');
 var routes = require('./routes/index');
 var app = express();
-
+// require('viewport-units-buggyfill').init({hacks: window.viewportUnitsBuggyfillHacks});
  
 var PORT = process.env.NODE_ENV || 3000;
 

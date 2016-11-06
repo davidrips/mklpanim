@@ -31,14 +31,15 @@ $(document).ready(function(){
             )
         }
     })
-})
+if(!Modernizr.touchevents){
+
+    console.log('hiiii');
 
     var enterAnim1 = TweenMax.to($("#secondpgcontent1"), 1, {left:0, ease:"Power2.easeInOut"});
     var enterAnim2= TweenMax.to($("#secondpgcontent1a"), 1, {right:0, ease:"Power2.easeInOut"});
     var enterAnim3= TweenMax.to($("#secondpgcontent1b"), 1, {left:0, ease:"Power2.easeInOut"});
     var qlcircle= TweenMax.to("#qlcirc", 1, {width: '50%', rotation: "360", ease:"Power2.easeInOut" })
     var shrinkCircle = TweenMax.to($("#qlcirc"), 1, {width: '0%', height:"0%", rotation:"-360", ease: "Power2.easeInOut"});
-    // var pushdownprovtext = TweenMax.to($("#secondpgcontent1b"),1,{top:"24vh", ease: "Power2.easeInOut"});
     var bringouttools= TweenMax.to($("#svgrow"),2,{scale:1, ease: "Power2.easeInOut"})
     var bringouttools2= TweenMax.to($("#svgrow"),2,{height:"20vh", ease: "Power2.easeInOut"})
     var changelamp = TweenMax.to($(".testsvgblue"), 1, {fill:"white"})
@@ -59,34 +60,14 @@ $(document).ready(function(){
     var scene3 = new ScrollMagic.Scene({triggerElement: "#section2", duration: "60%", offset: "15%"}).setTween(enterAnim3).addTo(controller);
     var scene4 = new ScrollMagic.Scene({triggerElement: "#probquest", duration: "80%"}).setTween(qlcircle).addTo(controller);
     var scene6 = new ScrollMagic.Scene({triggerElement:"#missioncont", triggerHook:"0.5",duration:"25%"}).setTween(shrinkCircle).addTo(controller);
-
     var testnew = new ScrollMagic.Scene({triggerElement:"#missioncont", triggerHook:"0.1"}).setPin("#missioncont",{spacerClass:"controw2spacer"}).addTo(controller);
-    // var scene7 = new ScrollMagic.Scene({triggerElement:"#controw2", triggerHook:"onLeave"}).setPin("#controw2",{spacerClass:"controw2spacer"}).addTo(controller);
-    // var scene9 = new ScrollMagic.Scene({triggerElement:"#controw2", triggerHook:"onLeave"}).setPin("#controw3",{spacerClass:"controw2spacer"}).addTo(controller);
-    // var scene8 = new ScrollMagic.Scene({triggerElement:"#controw2", triggerHook:"onLeave"}).setPin("#controw4",{spacerClass:"controw2spacer"}).addTo(controller);
-    // var scene12a =  new ScrollMagic.Scene({triggerElement:"#controw2", triggerHook:"onLeave"}).setPin("#svgrow",{spacerClass:"controw2spacer"}).addTo(controller);
-    // var scene12 = new ScrollMagic.Scene({triggerElement:"#controw2", triggerHook:"onLeave", duration:"20%"}).setTween(pushdownprovtext).addTo(controller);
     var scene13 = new ScrollMagic.Scene({triggerElement:"#missioncont", triggerHook:"0.2", duration:"40%"}).setTween(bringouttools2).addTo(controller);
-    var scene13 = new ScrollMagic.Scene({triggerElement:"#missioncont", triggerHook:"0.2", duration:"50%"}).setTween(bringouttools).addTo(controller);
-
+    var scene13a= new ScrollMagic.Scene({triggerElement:"#missioncont", triggerHook:"0.2", duration:"50%"}).setTween(bringouttools).addTo(controller);
     var scene14 = new ScrollMagic.Scene({triggerElement:"#controw5", triggerHook:"onLeave", offset:'14', duration:"150%"}).setPin("#controw5", {pushFollowers: false}).addTo(controller);
-    // scene14.on('start', function(){testnew.update()})
-    // scene14.on("end", function() {testnew.removePin()})
-
     var scene15 = new ScrollMagic.Scene({triggerElement:"#controw5", triggerHook:"onLeave", offset:"50vh", duration:"60%"}).setTween(changelamp).addTo(controller);
     var scene16 = new ScrollMagic.Scene({triggerElement:"#controw5", triggerHook:"onLeave"}).setTween(blinkarrows).addTo(controller);
     var scene17 = new ScrollMagic.Scene({triggerElement:"#controw5", triggerHook:"onLeave", offset:"50vh", duration:"80%"}).setTween(drawscribs).addTo(controller);
-
-    // var scene18 = new ScrollMagic.Scene({triggerElement:"#controw5", triggerHook:"onLeave", offset:"50vh", duration:"95%"}).removePin("#controw5").addTo(controller);
     var scene19 = new ScrollMagic.Scene({triggerElement:"#controw5", triggerHook:"0"}).setTween(hidepinned).addTo(controller)
-    // var scene19 = new ScrollMagic.Scene({triggerElement:"#controw6", triggerHook:"onLeave", offset:14}).setPin("#controw6").addTo(controller);
-    
-        
-    // var wipeAnimation = TweenMax.to($("#controw8"),3, {right:"0%", ease: "Power2.easeInOut"})
-
-
-
-
     var drawGraphs = new TimelineMax()
         .add(TweenMax.to($("#barsvgy1"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
         .add(TweenMax.to($("#barsvgp1"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
@@ -98,42 +79,24 @@ $(document).ready(function(){
         .add(TweenMax.to($(".pline"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
         .add(TweenMax.staggerTo($(".lineydots"),.5,{opacity: 1, ease:Linear.easeNone}, 0.2))
         .add(TweenMax.to($(".yline"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
-
         .add(TweenMax.to($("#gaugepartr"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
         .add(TweenMax.to($("#gaugeparty"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
         .add(TweenMax.to($("#gaugepartg"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
         .add(TweenMax.to($("#gaugepartp"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
         .add(TweenMax.to($("#gaugepartl"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
 
-
-
-        // TweenMax.to($("#controw8"),1,{x:"-100%"})
-    var scene20 = new ScrollMagic.Scene({triggerElement:"#pinContainer", triggerHook:"onLeave", offset:14, duration:"200%"}).setPin("#pinContainer", {pushFollowers:true}).addIndicators().addTo(controller);
+    var scene20 = new ScrollMagic.Scene({triggerElement:"#pinContainer", triggerHook:"onLeave", offset:14, duration:"200%"}).setPin("#pinContainer", {pushFollowers:true}).addTo(controller);
     var scene21 = new ScrollMagic.Scene({triggerElement:"#pinContainer", triggerHook:0, offset:30, duration:"90%"}).setTween(drawGraphs).addTo(controller);
-
-
-
-
     var g;
-   var h = $("#secondpgcontent3").css('height');
-   // console.log(h);
-
-
-    function spc3Height(size){
-        // console.log(size);
-        var size2 = size.substring(0, size.length-2);
-        // console.log(size2);
-        var size3 = parseInt(size2);
-
-        var size4 = size3 * 1.05;
-        // console.log(size4);
-        g = size4
-    }
-
+    var h = $("#secondpgcontent3").css('height');
+    function spc3Height(size)
+        {
+            var size2 = size.substring(0, size.length-2);
+            var size3 = parseInt(size2);
+            var size4 = size3 * 1.05;
+            g = size4
+        }
     spc3Height(h);
-   
-    // console.log(g);
-     // var makebigdots= new TweenMax.to($(".bigconcircles"), 0.9,{opacity:"1", ease:Linear.easeNone});
     var makedots= new TimelineMax()
         .add(TweenMax.to($(".bigconcircles"), 0.9,{opacity:"1", ease:Linear.easeNone}),0)
         .add(TweenMax.to($(".yellowconcircles"), 0.9,{opacity:"1", ease:Linear.easeNone}),1)
@@ -144,32 +107,42 @@ $(document).ready(function(){
         .add(TweenMax.to($("#contop"), 2, {strokeDashoffset: 0, ease:Linear.easeNone}),4)
         .add(TweenMax.to($("#conleft"), 2, {strokeDashoffset: 0, ease:Linear.easeNone}),4)
         .add(TweenMax.to($("#conleft2"), 2, {strokeDashoffset: 0, ease:Linear.easeNone}),4)
-        .add(TweenMax.to($("#secondpgcontent7"), 5, {right:"300%", ease:"Power2.easeInOut"}),5)
-        .add(TweenMax.to($("#secondpgcontent7a"), 5, {left:"-100%", ease:"Power2.easeInOut"}),6)
+        // .add(TweenMax.to($("#secondpgcontent7"), 5, {right:"300%", ease:"Power2.easeInOut"}),5)
+        .add(TweenMax.to($("#secondpgcontent7a"), 5, {left:"0%", ease:"Power2.easeInOut"}),4)
 
 
-   // var drawConnect = new TimelineMax()
-   //      .add(TweenMax.to($(".littleconcircles"), 0.9,{opacity:"1", ease:Linear.easeNone}))
-   //      .add(TweenMax.to($("#conright"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}),1)
-   //      .add(TweenMax.to($("#conbottom"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}),1)
-   //      .add(TweenMax.to($("#contop"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}),1)
-   //      .add(TweenMax.to($("#conleft"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}),1)
-   //      .add(TweenMax.to($("#conleft2"), 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}),1)
- 
     var sr6a = new ScrollMagic.Scene({triggerElement: '#controw6o',triggerHook: 0, offset: '14',
     duration:"300%"}).setPin("#controw6o", {pushFollowers:false}).addTo(controller);
-
     var sr6b = new ScrollMagic.Scene({triggerElement: '#svg6wrap', triggerHook: "onLeave",  duration:"200%"}).setPin('#svg6wrap', {pushFollowers:false}).addTo(controller);
-    sr6b.offset(g*-1)
-    var sr6c = new ScrollMagic.Scene({triggerElement: '#controw6b', triggerHook: 0.7,  duration:"100%"}).setPin('#controw6b', {pushFollowers:false}).addTo(controller);
-    
+    sr6b.offset(g*-1);
+    var sr6c = new ScrollMagic.Scene({triggerElement: '#controw6b', triggerHook: 0.8,  duration:"100%"}).setPin('#controw6b', {pushFollowers:false}).addTo(controller);
     var con = new ScrollMagic.Scene({triggerElement: '#connectContainer', triggerHook: "onLeave", offset:"14", duration:"500%"}).setPin('#connectContainer', {pushFollowers:true}).addTo(controller);
+     var con1move= TweenMax.to($("#secondpgcontent7"), 1, {right:0, ease:"Power2.easeInOut"});
+    var con1 = new ScrollMagic.Scene({triggerElement: '#connectContainer', triggerHook: "onLeave", offset:"14"}).setTween(con1move).addTo(controller);
+    var drawConAnim2= new ScrollMagic.Scene({triggerElement:"#connectContainer", triggerHook:"onLeave", duration:"400%"}).setTween(makedots).addTo(controller);
+}else{
+    console.log('touchin');
 
-    // var drawConAnim1= new ScrollMagic.Scene({triggerElement:"#connectContainer", triggerHook:"onLeave", duration:"20%"}).setTween(makebigdots).addTo(controller).addIndicators({loglevel:"3"});
+    // $("#introhead").html("<h1>TESTINGITTT</h1>")
 
-    var drawConAnim2= new ScrollMagic.Scene({triggerElement:"#connectContainer", triggerHook:"onLeave", duration:"400%"}).setTween(makedots).addTo(controller).addIndicators({loglevel:"3"});
+    var blinkarrows = TweenMax.fromTo($(".svgarrow"), 1, {fill:"#45A2D9"}, {fill:"#FED139", repeat: -1, repeatDelay:2,ease: RoughEase.ease.config({ template: Power0.easeNone, strength: 1, points: 20, taper: "none", randomize: true, clamp: false})});
 
-    // var drawConAnim3= new ScrollMagic.Scene({triggerElement:"#connectContainer", triggerHook:"onLeave", duration:"60%"}).setTween(drawConnect).addTo(controller).addIndicators({loglevel:"3"});
+    var drawscribs = new TimelineMax({repeat:-1})
+        .add(TweenMax.to($("#svgscrib2"), 2, {strokeDashoffset: 0, ease:Linear.easeNone}),1)
+        .add(TweenMax.to($("#svgscrib1"), 2, {strokeDashoffset: 0, ease:Linear.easeNone}),3)
+        .add(TweenMax.to($("#svgscrib3"), 2, {strokeDashoffset: 0, ease:Linear.easeNone}),5)
+
+    var makedots= new TimelineMax({repeat:-1, repeatDelay:1, yoyo:true})
+        .add(TweenMax.to($(".bigconcircles"), 0.9,{opacity:"1", ease:Linear.easeNone}),0)
+        .add(TweenMax.to($(".yellowconcircles"), 0.5,{opacity:"1", ease:Linear.easeNone}),1)
+        .add(TweenMax.to($(".iconcongrp"), 0.5,{opacity:"1", ease:Linear.easeNone}),2)
+        .add(TweenMax.to($(".littleconcircles"), 0.3,{opacity:"1", ease:Linear.easeNone}),3)
+        .add(TweenMax.to($("#conright"), 2, {strokeDashoffset: 0, ease:Linear.easeNone}),4)
+        .add(TweenMax.to($("#conbottom"), 2, {strokeDashoffset: 0, ease:Linear.easeNone}),4)
+        .add(TweenMax.to($("#contop"), 2, {strokeDashoffset: 0, ease:Linear.easeNone}),4)
+        .add(TweenMax.to($("#conleft"), 2, {strokeDashoffset: 0, ease:Linear.easeNone}),4)
+        .add(TweenMax.to($("#conleft2"), 2, {strokeDashoffset: 0, ease:Linear.easeNone}),4)
+}
  
    
 
@@ -271,27 +244,27 @@ $(document).ready(function(){
 
     // var timeline1 = new TimelineMax().add(pushdownprovtext).add(maketoolbiggers);
 
-    function givesize(){
-        var controw2space = $(".controw2spacer").css("padding-bottom")
-        // console.log(controw2space);
-        setOffset(controw2space)
-    }
+    // function givesize(){
+    //     var controw2space = $(".controw2spacer").css("padding-bottom")
+    //     // console.log(controw2space);
+    //     setOffset(controw2space)
+    // }
 
-    function setOffset(size){
-        console.log(size);
-        var numsize = size.substring(0, size.length-2);
-        console.log(numsize);
-        var theheight =$("#secondpgcontent1a").css("height")
-        console.log(theheight);
-        var height1 = parseInt(theheight);
+    // function setOffset(size){
+    //     console.log(size);
+    //     var numsize = size.substring(0, size.length-2);
+    //     console.log(numsize);
+    //     var theheight =$("#secondpgcontent1a").css("height")
+    //     console.log(theheight);
+    //     var height1 = parseInt(theheight);
 
-        var height2 = height1 * 1.2;
-        // var newnumsize = numsize-height2;
-        // console.log(newnumsize);
-        a = height2
-        console.log(a);
-        // changeit(a)
-    }
+    //     var height2 = height1 * 1.2;
+    //     // var newnumsize = numsize-height2;
+    //     // console.log(newnumsize);
+    //     a = height2
+    //     console.log(a);
+    //     // changeit(a)
+    // }
 
     // function changeit(displace){
     //     console.log('displaced it by' + [displace]);
@@ -413,3 +386,4 @@ $(document).ready(function(){
 
 
 // });
+})
